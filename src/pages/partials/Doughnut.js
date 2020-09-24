@@ -94,8 +94,6 @@ export class Doughnut extends Component {
                 fontWeight: 'bold'
             }
         };
-
-        console.log('donat settings ', chart2_settings)
         if(this.state.dataload===1) {
         return(
             <section className="section_charts gradient_box2">

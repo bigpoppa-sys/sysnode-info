@@ -10,7 +10,8 @@ import About from './pages/About';
 import Setup from './pages/Setup';
 import Check from './pages/Check';
 import Stats from './pages/Stats';
-import AxisChart from './pages/partials/AxisChart';
+import Governance from './pages/Governance';
+import Error from './pages/Error';
 
 class App extends Component {
     render() {
@@ -23,7 +24,7 @@ class App extends Component {
             <Route path="/setup" component={Setup} />
             <Route path="/check" component={Check} />
             <Route path="/stats" component={Stats} />
-            <Route path="/AxisChart" component={AxisChart} />
+            <Route path="/governance" component={Governance} />
             <Route component={Error} />
         </Switch>
         <div className="clearfix"></div>
