@@ -13,7 +13,7 @@ export default {
         vote_command:'Vote Commands',
         green_text:'This Proposal is currently Passing',
         red_text:'This Proposal needs [API] more YES Votes',
-        view_proposal_txt:'VIew Proposal'
+        view_proposal_txt:'View Proposal'
       },
       loading: 'Data is being loaded',
     },
