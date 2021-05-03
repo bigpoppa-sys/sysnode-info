@@ -22,8 +22,8 @@ export class Doughnut extends Component {
     }
     loadCharts(response) {
         const { t } = this.props;
-        var total_enabled=this.formatNumber(response.mnEnabled);
-        var total_banned=this.formatNumber(response.poseBanned);
+        var total_enabled=this.formatNumber(response.enabled);
+        var total_banned=this.formatNumber(response.pose_banned);
         var final=total_enabled+total_banned;
 
         var total_locked=this.formatNumber(response.total_locked);
