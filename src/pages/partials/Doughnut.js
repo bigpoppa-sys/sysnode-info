@@ -24,8 +24,6 @@ export class Doughnut extends Component {
         const { t } = this.props;
         var total_enabled=this.formatNumber(response.mnEnabled);
         var total_banned=this.formatNumber(response.poseBanned);
-        /*var total_new_start=this.formatNumber(response.new_start_required);*/
-        /*var total_sent=this.formatNumber(response.sentinel_ping_expired);*/
         var final=total_enabled+total_banned;
 
         var total_locked=this.formatNumber(response.total_locked);
@@ -36,8 +34,7 @@ export class Doughnut extends Component {
             dataload: 1,
             chart1_details: [
                 {x: t('doughnut.charts.masterNodes.enabled'), value: total_enabled, fill:'#ee6c01'},
-                {x: t('doughnut.charts.masterNodes.startRequired'), value: total_banned, fill:'#0b209a'},
-                /*{x: t('doughnut.charts.masterNodes.pingExpired'), value: total_sent, fill:'#fff'},*/
+                {x: t('doughnut.charts.masterNodes.poseBanned'), value: total_banned, fill:'#0b209a'},
             ],
             chart1_mid: final,
             chart2_details: [
