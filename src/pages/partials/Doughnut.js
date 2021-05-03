@@ -22,10 +22,11 @@ export class Doughnut extends Component {
     }
     loadCharts(response) {
         const { t } = this.props;
-        var total_enabled=this.formatNumber(response.enabled);
-        var total_new_start=this.formatNumber(response.new_start_required);
-        var total_sent=this.formatNumber(response.sentinel_ping_expired);
-        var final=total_enabled+total_new_start+total_sent;
+        var total_enabled=this.formatNumber(response.mnEnabled);
+        var total_nodes=this.formatNumber(response.mnTota);
+        /*var total_new_start=this.formatNumber(response.new_start_required);*/
+        /*var total_sent=this.formatNumber(response.sentinel_ping_expired);*/
+        var final=total_nodes;
 
         var total_locked=this.formatNumber(response.total_locked);
         var rem_supply=this.formatNumber(response.current_supply)-this.formatNumber(response.total_locked);
@@ -35,8 +36,8 @@ export class Doughnut extends Component {
             dataload: 1,
             chart1_details: [
                 {x: t('doughnut.charts.masterNodes.enabled'), value: total_enabled, fill:'#ee6c01'},
-                {x: t('doughnut.charts.masterNodes.startRequired'), value: total_new_start, fill:'#0b209a'},
-                {x: t('doughnut.charts.masterNodes.pingExpired'), value: total_sent, fill:'#fff'},
+                /*{x: t('doughnut.charts.masterNodes.startRequired'), value: total_new_start, fill:'#0b209a'},*/
+                /*{x: t('doughnut.charts.masterNodes.pingExpired'), value: total_sent, fill:'#fff'},*/
             ],
             chart1_mid: final,
             chart2_details: [
