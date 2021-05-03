@@ -25,7 +25,7 @@ class Header extends Component {
                             </li>
                             <li className="animation" data-animation="fadeInDown" data-animation-delay="1.3s"><Link className="nav-link" to="/about">{t('header.about')}</Link></li>
                             <li className="animation" data-animation="fadeInDown" data-animation-delay="1.3s"><Link className="nav-link" to="/stats">{t('header.stats')}</Link></li>
-                            <li className="animation" data-animation="fadeInDown" data-animation-delay="1.4s"><Link className="nav-link" to="/setup">{t('header.setup')}</Link></li>
+                            <li className="animation" data-animation="fadeInDown" data-animation-delay="1.6s"><a className="nav-link" rel="noopener noreferrer" href="https://support.syscoin.org/t/syscoin-lux-masternode-install-guide/463" target="_blank">{t('header.setup')}</a></li>
                             <li className="animation" data-animation="fadeInDown" data-animation-delay="1.5s"><Link className="nav-link" to="/check">{t('header.check')}</Link></li>
                             <li className="animation" data-animation="fadeInDown" data-animation-delay="1.5s"><Link className="nav-link" to="/governance">{t('header.governance')}</Link></li>
                             <li className="animation" data-animation="fadeInDown" data-animation-delay="1.6s"><a className="nav-link" rel="noopener noreferrer" href="https://support.syscoin.org/" target="_blank">{t('header.support')}</a></li>
