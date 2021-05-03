@@ -4,8 +4,7 @@ export default {
       masterNodes: {
         title: 'Total Masternodes',
         enabled: 'Enabled',
-        startRequired: 'New Start Required',
-        pingExpired: 'Sentinel Ping Expired',
+        poseBanned: 'Pose Banned',
       },
       coinsLocked: {
         title: 'Coins Locked',
