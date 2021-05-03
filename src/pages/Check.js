@@ -14,10 +14,6 @@ const getColumns = (t) => {
             dataField: 'address'
         },
         {
-            text: t('check.table.protocol'),
-            dataField: 'protocol'
-        },
-        {
             text: t('check.table.status'),
             dataField: 'status'
         },
@@ -29,14 +25,6 @@ const getColumns = (t) => {
             text: t('check.table.lastpaidtime'),
             dataField: 'lastpaidtime'
         },
-        {
-            text: t('check.table.activeseconds'),
-            dataField: 'activeseconds'
-        },
-        {
-            text: t('check.table.lastseen'),
-            dataField: 'lastseen'
-        }
     ];
 }
 
