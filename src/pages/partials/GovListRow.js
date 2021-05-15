@@ -47,13 +47,13 @@ export class GovListRow extends Component {
                 pass=<i className='fa fa-times redIcon' data-tip={new_text}></i>;
             }
             var green_comment=<p>
-                    <CopyToClipboard text={'gobject vote-many '+rowdata.Hash+' funding yes'}
+                    <CopyToClipboard text={'gobject_vote_many '+rowdata.Hash+' funding yes'}
                     onCopy={() => alert('Copied to Clipboard') }>
                     <button type="button" className="copybtns greenIcon">Copy Yes <i className='fa fa-check'></i></button>
                     </CopyToClipboard>
                 </p>;
             var red_comment=<p>
-                <CopyToClipboard text={'gobject vote-many '+rowdata.Hash+' funding no'}
+                <CopyToClipboard text={'gobject_vote_many '+rowdata.Hash+' funding no'}
                 onCopy={() => alert('Copied to Clipboard') }>
                 <button type="button" className="copybtns redIcon">Copy No <i className='fa fa-times' ></i></button>
                 </CopyToClipboard>
