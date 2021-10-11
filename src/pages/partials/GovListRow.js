@@ -69,6 +69,7 @@ export class GovListRow extends Component {
                     <br/>
                     <a href={final_url} target='_blank' rel='noopener noreferrer'><span className="badge badge-success">{t('govlist.table.view_proposal_txt')}</span></a>
                 </td>
+                <td> {rowdata.title} </td>                                                                                                         
                 <td>{humanDateFormat}</td>
                 <td>{parseFloat(rowdata.payment_amount*1)} SYS</td>
                 <td>
