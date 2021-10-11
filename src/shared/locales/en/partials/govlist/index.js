@@ -4,6 +4,7 @@ export default {
         title:'Current Proposals',
         passing:'Passing',
         name:'Name',
+        prop_title:'Title',  
         created:'Created',
         budget:'Budget',
         payment_period:'Payment Period',
