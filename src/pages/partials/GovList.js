@@ -35,6 +35,7 @@ export class GovList extends Component {
                                     <tr>
                                         <th>{t('govlist.table.passing')}</th>
                                         <th>{t('govlist.table.name')}</th>
+                                        <th>{t('govlist.table.prop_title')}</th>
                                         <th>{t('govlist.table.created')}</th>
                                         <th>{t('govlist.table.budget')}</th>
                                         <th>{t('govlist.table.payment_period')}</th>
