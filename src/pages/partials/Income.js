@@ -139,9 +139,9 @@ export class Income extends Component {
                                 <div className="pricebar__block text-center">
                                     <div className="pricebar__block__title">{t('income.income.daily')}</div>
                                     <div className="pricebar__block__content">
-                                        <div>{this.state.incomeSenOneYrData.usd.daily}</div>
-                                        <div>{this.state.incomeSenOneYrData.btc.daily}</div>
-                                        <div className="font-weight-bold">{this.state.incomeSenOneYrData.sys.daily}</div>
+                                        <div>{this.state.incomeSenTwoYrData.usd.daily}</div>
+                                        <div>{this.state.incomeSenTwoYrData.btc.daily}</div>
+                                        <div className="font-weight-bold">{this.state.incomeSenTwoYrData.sys.daily}</div>
                                     </div>
                                 </div>
                             </div>
@@ -149,9 +149,9 @@ export class Income extends Component {
                                 <div className="pricebar__block text-center">
                                     <div className="pricebar__block__title">{t('income.income.weekly')}</div>
                                     <div className="pricebar__block__content">
-                                        <div>{this.state.incomeSenOneYrData.usd.weekly}</div>
-                                        <div>{this.state.incomeSenOneYrData.btc.weekly}</div>
-                                        <div className="font-weight-bold">{this.state.incomeSenOneYrData.sys.weekly}</div>
+                                        <div>{this.state.incomeSenTwoYrData.usd.weekly}</div>
+                                        <div>{this.state.incomeSenTwoYrData.btc.weekly}</div>
+                                        <div className="font-weight-bold">{this.state.incomeSenTwoYrData.sys.weekly}</div>
                                     </div>
                                 </div>
                             </div>
@@ -159,9 +159,9 @@ export class Income extends Component {
                                 <div className="pricebar__block text-center">
                                     <div className="pricebar__block__title">{t('income.income.monthly')}</div>
                                     <div className="pricebar__block__content">
-                                        <div>{this.state.incomeSenOneYrData.usd.monthly}</div>
-                                        <div>{this.state.incomeSenOneYrData.btc.monthly}</div>
-                                        <div className="font-weight-bold">{this.state.incomeSenOneYrData.sys.monthly}</div>
+                                        <div>{this.state.incomeSenTwoYrData.usd.monthly}</div>
+                                        <div>{this.state.incomeSenTwoYrData.btc.monthly}</div>
+                                        <div className="font-weight-bold">{this.state.incomeSenTwoYrData.sys.monthly}</div>
                                     </div>
                                 </div>
                             </div>
@@ -169,9 +169,9 @@ export class Income extends Component {
                                 <div className="pricebar__block text-center">
                                     <div className="pricebar__block__title">{t('income.income.yearly')}</div>
                                     <div className="pricebar__block__content">
-                                        <div>{this.state.incomeSenOneYrData.usd.yearly}</div>
-                                        <div>{this.state.incomeSenOneYrData.btc.yearly}</div>
-                                        <div className="font-weight-bold">{this.state.incomeSenOneYrData.sys.yearly}</div>
+                                        <div>{this.state.incomeSenTwoYrData.usd.yearly}</div>
+                                        <div>{this.state.incomeSenTwoYrData.btc.yearly}</div>
+                                        <div className="font-weight-bold">{this.state.incomeSenTwoYrData.sys.yearly}</div>
                                     </div>
                                 </div>
                             </div>
