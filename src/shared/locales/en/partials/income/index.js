@@ -4,6 +4,7 @@ export default {
     tabs: {
       latestStats: 'Latest Stats',
       oneYearSeniority: '1 Year Seniority',
+      twoYearSeniority: '2.5 Year Seniority'
     },
     income: {
       daily: 'Daily Income',
