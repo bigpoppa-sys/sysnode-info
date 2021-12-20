@@ -7,14 +7,16 @@ export class Income extends Component {
         this.state = {
             dataload: 0,
             incomeData: [],
-            incomeSenOneYrData: []
+            incomeSenOneYrData: [],
+            incomeSenTwoYrData: []
         }
     }
     componentDidMount() {
         this.setState({
             dataload: 1,
             incomeData: this.props.incomeData,
-            incomeSenOneYrData: this.props.incomeSenOneYrData
+            incomeSenOneYrData: this.props.incomeSenOneYrData,
+            incomeSenTwoYrData: this.props.incomeSenTwoYrData
         });
     }
     render() {
@@ -36,6 +38,9 @@ export class Income extends Component {
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" data-toggle="tab" href="#tabs-2" role="tab">{t('income.tabs.oneYearSeniority')}</a>
+                    </li>
+					 <li className="nav-item">
+                        <a className="nav-link" data-toggle="tab" href="#tabs-3" role="tab">{t('income.tabs.twoYearSeniority')}</a>
                     </li>
                 </ul>
                 <div className="tab-content">
@@ -122,6 +127,50 @@ export class Income extends Component {
                                         <div>{this.state.incomeSenOneYrData.usd.yearly}</div>
                                         <div>{this.state.incomeSenOneYrData.btc.yearly}</div>
                                         <div className="font-weight-bold">{this.state.incomeSenOneYrData.sys.yearly}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+		 			<div className="tab-pane" id="tabs-3" role="tabpanel">
+                        <div className="row">
+                            <div className="col-12 col-md-6 col-lg-3 animation mb-5 mb-lg-0" data-animation="fadeInUp" data-animation-delay="1s">
+                                <div className="pricebar__block text-center">
+                                    <div className="pricebar__block__title">{t('income.income.daily')}</div>
+                                    <div className="pricebar__block__content">
+                                        <div>{this.state.incomeSenTwoYrData.usd.daily}</div>
+                                        <div>{this.state.incomeSenTwoYrData.btc.daily}</div>
+                                        <div className="font-weight-bold">{this.state.incomeSenTwoYrData.sys.daily}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-12 col-md-6 col-lg-3 animation mb-5 mb-lg-0" data-animation="fadeInUp" data-animation-delay="1.1s">
+                                <div className="pricebar__block text-center">
+                                    <div className="pricebar__block__title">{t('income.income.weekly')}</div>
+                                    <div className="pricebar__block__content">
+                                        <div>{this.state.incomeSenTwoYrData.usd.weekly}</div>
+                                        <div>{this.state.incomeSenTwoYrData.btc.weekly}</div>
+                                        <div className="font-weight-bold">{this.state.incomeSenTwoYrData.sys.weekly}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-12 col-md-6 col-lg-3 animation mb-5 mb-md-0" data-animation="fadeInUp" data-animation-delay="1.2s">
+                                <div className="pricebar__block text-center">
+                                    <div className="pricebar__block__title">{t('income.income.monthly')}</div>
+                                    <div className="pricebar__block__content">
+                                        <div>{this.state.incomeSenTwoYrData.usd.monthly}</div>
+                                        <div>{this.state.incomeSenTwoYrData.btc.monthly}</div>
+                                        <div className="font-weight-bold">{this.state.incomeSenTwoYrData.sys.monthly}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-12 col-md-6 col-lg-3 animation" data-animation="fadeInUp" data-animation-delay="1.3s">
+                                <div className="pricebar__block text-center">
+                                    <div className="pricebar__block__title">{t('income.income.yearly')}</div>
+                                    <div className="pricebar__block__content">
+                                        <div>{this.state.incomeSenTwoYrData.usd.yearly}</div>
+                                        <div>{this.state.incomeSenTwoYrData.btc.yearly}</div>
+                                        <div className="font-weight-bold">{this.state.incomeSenTwoYrData.sys.yearly}</div>
                                     </div>
                                 </div>
                             </div>
