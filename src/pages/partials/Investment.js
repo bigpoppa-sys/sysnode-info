@@ -55,11 +55,11 @@ export class Investment extends Component {
                                     </tr>
                                     <tr>
                                         <td>{t('investment.investmentTable.firstPayment')}</td>
-                                        <td>{this.state.investData.first_pay}</td>
+                                        <td>{this.state.investData.roi_one}</td>
                                     </tr>
                                     <tr>
                                         <td>{t('investment.investmentTable.rewardAbility')}</td>
-                                        <td>{this.state.investData.reward_eligble}</td>
+                                        <td>{this.state.investData.roi_two}</td>
                                     </tr>
                                 </tbody>
                             </table>
