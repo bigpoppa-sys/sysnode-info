@@ -8,8 +8,8 @@ export default {
       masterNodePrice: 'Masternode Price',
       roi: 'ROI',
       payoutFrequency: 'Approx. Payout Frequency',
-      firstPayment: 'Approx. First Payment',
-      rewardAbility: 'Approx. Reward Eligibility',
+      roiOne: 'ROI: 1 Year Seniority',
+      roiTwo: 'ROI: 2.5 Year Seniority',
     },
     blockchainTable: {
       title: 'Blockchain Stats',
