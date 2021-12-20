@@ -46,19 +46,19 @@ export class Investment extends Component {
                                         <td>${this.state.investData.masternode_price_usd}</td>
                                     </tr>
                                     <tr>
-                                        <td>{t('investment.investmentTable.roi')}</td>
-                                        <td>{this.state.investData.roi}</td>
-                                    </tr>
-                                    <tr>
                                         <td>{t('investment.investmentTable.payoutFrequency')}</td>
                                         <td>{this.state.investData.payout_frequency}</td>
                                     </tr>
                                     <tr>
-                                        <td>{t('investment.investmentTable.firstPayment')}</td>
+                                        <td>{t('investment.investmentTable.roi')}</td>
+                                        <td>{this.state.investData.roi}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{t('investment.investmentTable.roiOne')}</td>
                                         <td>{this.state.investData.roi_one}</td>
                                     </tr>
                                     <tr>
-                                        <td>{t('investment.investmentTable.rewardAbility')}</td>
+                                        <td>{t('investment.investmentTable.roiTwo')}</td>
                                         <td>{this.state.investData.roi_two}</td>
                                     </tr>
                                 </tbody>
