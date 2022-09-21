@@ -58,7 +58,7 @@ export class Governance extends Component {
             }
         });
         Object.keys(govdata).forEach(function(key) {
-            if(govdata[key].Hash==="f17fab4888de92cf790c82305b652f84e9d5433ae34dc85b9009c9e6202d38c9") {
+            if(govdata[key].Hash==="2150ac4cf8e4c75375d3154e5c3a6780ac3ac5813a1f95e5b5ded015e4d4462e") {
                 delete govdata[key];
             }
         });
