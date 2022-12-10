@@ -58,9 +58,13 @@ export class Governance extends Component {
             }
         });
         Object.keys(govdata).forEach(function(key) {
-            if(govdata[key].Hash==="2150ac4cf8e4c75375d3154e5c3a6780ac3ac5813a1f95e5b5ded015e4d4462e" && govdata[key].Hash==="ccca4ff896e07502a5af724e163154e28d31fdb7122882c6d641751695db45d7") {
+            if(govdata[key].Hash==="2150ac4cf8e4c75375d3154e5c3a6780ac3ac5813a1f95e5b5ded015e4d4462e") {
                 delete govdata[key];
             }
+        Object.keys(govdata).forEach(function(key) {
+            if(govdata[key].Hash==="ccca4ff896e07502a5af724e163154e28d31fdb7122882c6d641751695db45d7") {
+                delete govdata[key];
+            }    
         });
         var budgetSum = govdata.reduce(function(sum, d) {
             if(d.payment_amount===undefined) {
