@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withTranslation } from "react-i18next";
 import ReactTooltip from 'react-tooltip';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import moment from 'moment';
 
 export class GovListRow extends Component {
     constructor(props){
@@ -37,6 +38,18 @@ export class GovListRow extends Component {
             var milliseconds = unixTimestamp * 1000;
             const dateObject = new Date(milliseconds)
             const humanDateFormat = dateObject.getDate()+"-"+(dateObject.getMonth()+1)+"-"+dateObject.getFullYear();
+            
+            const start_time = rowdata.CreationTime;
+            const end_time = rowdata.end_epoch;
+            const start_date = moment.unix(start_time);
+            const end_date = moment.unix(end_time);
+            const num_months = (end_date.year() - start_date.year()) * 12 + (end_date.month() - start_date.month());
+            if (end_date.date() == start_date.date()) {
+                num_months = num_months;
+                } else {
+                num_months = num_months + 1;
+                }
+            var pass="";
             var pass="";
             if(((rowdata.YesCount - rowdata.NoCount)/enabled)*100 > 10) {
                 pass=<i className='fa fa-check greenIcon' data-tip={t('govlist.table.green_text')}></i>;
@@ -75,7 +88,7 @@ export class GovListRow extends Component {
                 <td>
                     {parseFloat(rowdata.payment_amount)+" SYS/Month"}
                     <br />
-                    {"1 Month(s)"}
+                    {num_months+" Month(s)"}
                 </td>
                 <td>{(rowdata.YesCount/(rowdata.YesCount+rowdata.NoCount)*100).toFixed(2)+"%"}
                     <br />
