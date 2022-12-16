@@ -72,6 +72,11 @@ export class Governance extends Component {
                 delete govdata[key];
             }    
         });
+        Object.keys(govdata).forEach(function(key) {
+            if(govdata[key].Hash==="f3cc4f3bbd5e5429e08748b29cffa390bc9200c4db645dbed0b1545bfa8ef64e") {
+                delete govdata[key];
+            }    
+        });
         var budgetSum = govdata.reduce(function(sum, d) {
             if(d.payment_amount===undefined) {
                 return sum + 0;
