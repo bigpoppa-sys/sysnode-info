@@ -18,7 +18,7 @@ export default {
       version: 'Version',
       subVersion: 'Sub Version',
       protocol: 'Protocol',
-      connections: 'Connections',
+      connections: 'Current Block',
       genesisBlock: 'Genesis Block',
       averageBlockTime: 'Average Block Time',
     },
