@@ -57,6 +57,16 @@ export class Stats extends Component {
 
     render() {
         if(this.state.dataload===1){
+            const chartData = {
+                labels: this.state.csvData.map(item => new Date(item.Timestamp).toLocaleDateString()),
+                datasets: [{
+                    label: 'Masternode Count',
+                    data: this.state.csvData.map(item => item.Amount),
+                    fill: false,
+                    backgroundColor: 'rgb(75, 192, 192)',
+                    borderColor: 'rgba(75, 192, 192, 0.2)',
+                }]
+            };
             return(
                 <main className="statsPage">
                     <MetaTags>
