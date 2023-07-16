@@ -12,7 +12,7 @@ export class Chart extends Component {
     }
 
     componentDidMount() {
-        axios.post('https://syscoin.dev/data')
+        axios.get('https://syscoin.dev/data')
             .then(response => {
                 const csvData = Papa.parse(response.data, {
                     header: true,
@@ -25,9 +25,10 @@ export class Chart extends Component {
     }
 
     prepareChartData(data) {
+    if (data && Array.isArray(data)) {
         const timestamps = data.map(obj => new Date(parseInt(obj.timestamp)).toDateString());
         const amounts = data.map(obj => obj.amount);
-        
+
         this.setState({
             chartData: {
                 labels: timestamps,
@@ -42,6 +43,7 @@ export class Chart extends Component {
             }
         });
     }
+}
 
     render() {
         return (
