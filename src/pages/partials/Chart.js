@@ -12,7 +12,7 @@ export class Chart extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://syscoin.dev/data')
+        axios.post('https://syscoin.dev/data')
             .then(response => {
                 const csvData = Papa.parse(response.data, {
                     header: true,
