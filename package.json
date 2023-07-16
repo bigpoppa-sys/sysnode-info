@@ -37,7 +37,7 @@
     "react-tooltip": "^4.2.8",
     "papaparse": "^5.4.1",
     "react-chartjs-2": "^5.2.0",
-    "chart.js": "^4.3.0"
+    "chart.js": "^3.7.0"
   },
   "scripts": {
     "start": "react-scripts start",
