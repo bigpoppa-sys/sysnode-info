@@ -3,7 +3,6 @@ import axios from "axios";
 
 import InnerBanner from '../parts/InnerBanner';
 import Doughnut from './partials/Doughnut';
-import AxisChart from './partials/AxisChart';
 import Income from './partials/Income';
 import Price from './partials/Price';
 import Investment from './partials/Investment';
@@ -33,15 +32,6 @@ export class Stats extends Component {
                     })
                     .catch(function(error) {
                         console.log(error);
-                    });
-
-        let dates = await axios
-                    .get("https://syscoin.dev/mnDates")
-                    .then(function(result) {
-                        return result;
-                    })
-                    .catch(function(error) {
-                        console.log('dates error: ', error);
                     });
                 
         this.setState({ 
