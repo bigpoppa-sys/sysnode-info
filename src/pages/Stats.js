@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from "axios";
-
 import InnerBanner from '../parts/InnerBanner';
 import Doughnut from './partials/Doughnut';
 import Income from './partials/Income';
@@ -9,14 +8,12 @@ import Investment from './partials/Investment';
 import WorldMap from './partials/WorldMap';
 import MetaTags from 'react-meta-tags';
 
-
 export class Stats extends Component {
     constructor(props){  
         super(props);  
         this.state = {  
             dataload: 0,
             api_data: [],
-            api_dates_data: []
         }
     }
 
@@ -36,17 +33,12 @@ export class Stats extends Component {
                 
         this.setState({ 
             dataload: 1, 
-            api_data: data.data,
-            api_dates_data: dates.data,      
+            api_data: data.data,  
         });
     }
 
-
-
-   
     render() {
         if(this.state.dataload===1){
-            console.log('api dates data: ',this.state.api_dates_data)
             return(
                 <main className="statsPage">
                     <MetaTags>
