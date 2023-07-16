@@ -3,7 +3,6 @@ import axios from "axios";
 
 import InnerBanner from '../parts/InnerBanner';
 import Doughnut from './partials/Doughnut';
-import AxisChart from './partials/AxisChart';
 import Income from './partials/Income';
 import Price from './partials/Price';
 import Investment from './partials/Investment';
@@ -51,12 +50,36 @@ export class Stats extends Component {
         });
     }
 
+    async getCSVData() {
+        const response = await axios.get('https://your-server-url/data.csv');
+        const parsedData = Papa.parse(response.data, {
+            dynamicTyping: true,
+            header: true,
+        });
+        return parsedData.data;
+    }
 
+    async componentDidMount() {
+        this.getStats();
 
-   
+        // Fetch the CSV data and set it in state.
+        const csvData = await this.getCSVData();
+        this.setState({ csvData });
+    }
+
     render() {
         if(this.state.dataload===1){
             console.log('api dates data: ',this.state.api_dates_data)
+            const chartData = {
+                labels: this.state.csvData.map(item => new Date(item.Timestamp).toLocaleDateString()),
+                datasets: [{
+                    label: 'Masternode Count',
+                    data: this.state.csvData.map(item => item.Amount),
+                    fill: false,
+                    backgroundColor: 'rgb(75, 192, 192)',
+                    borderColor: 'rgba(75, 192, 192, 0.2)',
+                }]
+            };
             return(
                 <main className="statsPage">
                     <MetaTags>
@@ -70,7 +93,7 @@ export class Stats extends Component {
                     <Price priceData={this.state.api_data.stats.price_stats}/>
                     <Investment investData={this.state.api_data.stats.mn_stats} blockchainData={this.state.api_data.stats.blockchain_stats}/>
                     <WorldMap mapData={this.state.api_data.mapData} mapFills={this.state.api_data.mapFills}/>
-                    
+                    <Line data={chartData} />                    
                 </main>
             )
         } else {
