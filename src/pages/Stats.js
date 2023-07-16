@@ -51,7 +51,7 @@ export class Stats extends Component {
     }
 
     async getCSVData() {
-        const response = await axios.get('https://your-server-url/data.csv');
+        const response = await axios.get('https://syscoin.dev/data.csv');
         const parsedData = Papa.parse(response.data, {
             dynamicTyping: true,
             header: true,
