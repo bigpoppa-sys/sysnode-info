@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Line } from 'react-chartjs-2';
+import axios from "axios";
 import InnerBanner from '../parts/InnerBanner';
 import Doughnut from './partials/Doughnut';
 import Income from './partials/Income';
