@@ -6,6 +6,7 @@ import Income from './partials/Income';
 import Price from './partials/Price';
 import Investment from './partials/Investment';
 import WorldMap from './partials/WorldMap';
+import Chart from './partials/Chart';
 import MetaTags from 'react-meta-tags';
 
 export class Stats extends Component {
@@ -52,6 +53,7 @@ export class Stats extends Component {
                     <Price priceData={this.state.api_data.stats.price_stats}/>
                     <Investment investData={this.state.api_data.stats.mn_stats} blockchainData={this.state.api_data.stats.blockchain_stats}/>
                     <WorldMap mapData={this.state.api_data.mapData} mapFills={this.state.api_data.mapFills}/>
+                    <Chart />
                 </main>
             )
         } else {
