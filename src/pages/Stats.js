@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import Papa from 'papaparse';
+import { Line } from 'react-chartjs-2';
 
 import InnerBanner from '../parts/InnerBanner';
 import Doughnut from './partials/Doughnut';
