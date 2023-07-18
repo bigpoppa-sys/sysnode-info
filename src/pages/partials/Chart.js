@@ -8,7 +8,7 @@ import './styles.css';
 
 Chart.register(LinearScale);
 
-function App() {
+function Chart() {
   const [chartData, setChartData] = useState(null);
   const [timeRange, setTimeRange] = useState('all');
 
@@ -87,7 +87,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="Chart">
       <div className="chart-container">
         <div className="time-range-buttons">
           <button
