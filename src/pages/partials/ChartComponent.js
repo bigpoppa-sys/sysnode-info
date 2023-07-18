@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Line } from 'react-chartjs-2';
-import { LinearScale } from 'chart.js';
+import { LinearScale, Title, Tooltip, Legend } from 'chart.js';
 import Chart from 'chart.js/auto';
+import AnnotationPlugin from 'chartjs-plugin-annotation';
 import axios from 'axios';
-import 'chartjs-plugin-zoom';
 
-Chart.register(LinearScale);
+Chart.register(LinearScale, Title, Tooltip, Legend, AnnotationPlugin);
 
 function ChartComponent() {
   const [chartData, setChartData] = useState(null);
   const [timeRange, setTimeRange] = useState('all');
+  const [hoveredPoint, setHoveredPoint] = useState(null);
 
   const fetchChartData = useCallback(() => {
     let users = [];
@@ -90,51 +91,54 @@ function ChartComponent() {
       <h1 className="text-white display-4 font-weight-bold">Masternode Count</h1>
       <div className="Chart container">
         <div className="row justify-content-center">
-        <div className="col-12 mt-4 justify-content-center flex-wrap">
-          <div className="btn-group flex-wrap d-sm-flex d-md-inline-flex" role="group" aria-label="Time range">
-            <button
-              className={timeRange === 'all' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-              onClick={() => handleTimeRangeClick('all')}
-            >
-              All Time
-            </button>
-            <button
-              className={timeRange === '7days' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-              onClick={() => handleTimeRangeClick('7days')}
-            >
-              Last 7 Days
-            </button>
-            <button
-              className={timeRange === '1month' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-              onClick={() => handleTimeRangeClick('1month')}
-            >
-              Last Month
-            </button>
-            <button
-              className={timeRange === '3months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-              onClick={() => handleTimeRangeClick('3months')}
-            >
-              Last 3 Months
-            </button>
-            <button
-              className={timeRange === '6months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-              onClick={() => handleTimeRangeClick('6months')}
-            >
-              Last 6 Months
-            </button>
-            <button
-              className={timeRange === '12months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-              onClick={() => handleTimeRangeClick('12months')}
-            >
-              Last Year
-            </button>
-          </div>
+          <div className="col-12 mt-4 justify-content-center flex-wrap">
+            <div className="btn-group flex-wrap d-sm-flex d-md-inline-flex" role="group" aria-label="Time range">
+              <button
+                className={timeRange === 'all' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+                onClick={() => handleTimeRangeClick('all')}
+              >
+                All Time
+              </button>
+              <button
+                className={timeRange === '7days' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+                onClick={() => handleTimeRangeClick('7days')}
+              >
+                Last 7 Days
+              </button>
+              <button
+                className={timeRange === '1month' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+                onClick={() => handleTimeRangeClick('1month')}
+              >
+                Last Month
+              </button>
+              <button
+                className={timeRange === '3months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+                onClick={() => handleTimeRangeClick('3months')}
+              >
+                Last 3 Months
+              </button>
+              <button
+                className={timeRange === '6months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+                onClick={() => handleTimeRangeClick('6months')}
+              >
+                Last 6 Months
+              </button>
+              <button
+                className={timeRange === '12months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+                onClick={() => handleTimeRangeClick('12months')}
+              >
+                Last Year
+              </button>
+            </div>
           </div>
           <div className="col-12 mt-4 mx-auto" style={{ maxWidth: '1000px', height: '500px' }}>
             {chartData && (
-                <div style={{border: "1px solid #ccc", padding: "15px", backgroundColor: "white"}} className="w-100 h-100">
+              <div style={{border: "1px solid #ccc", padding: "15px", backgroundColor: "white"}} className="w-100 h-100">
                 <Line
                   data={chartData}
+                  onHover={(_, chartElement) => {
+                    setHoveredPoint(chartElement[0]?.index);
+                  }}
                   options={{
                     responsive: true,
                     maintainAspectRatio: false,
@@ -169,6 +173,17 @@ function ChartComponent() {
                       },
                       legend: {
                         display: false,
+                      },
+                      annotation: {
+                        annotations: {
+                          line1: {
+                            type: 'line',
+                            xMin: hoveredPoint,
+                            xMax: hoveredPoint,
+                            borderColor: 'rgb(255, 99, 132)',
+                            borderWidth: 2,
+                          }
+                        },
                       },
                     },
                     scales: {

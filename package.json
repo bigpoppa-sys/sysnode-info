@@ -40,7 +40,8 @@
     "chart.js": "^4.3.0",
     "chartjs-plugin-zoom": "^2.0.1",
     "chartjs-adapter-moment": "^1.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "chartjs-plugin-annotation": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
