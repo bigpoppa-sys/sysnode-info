@@ -6,7 +6,7 @@ import Income from './partials/Income';
 import Price from './partials/Price';
 import Investment from './partials/Investment';
 import WorldMap from './partials/WorldMap';
-import Chart from './partials/ChartComponent';
+import ChartComponent from './partials/ChartComponent';
 import MetaTags from 'react-meta-tags';
 
 export class Stats extends Component {
