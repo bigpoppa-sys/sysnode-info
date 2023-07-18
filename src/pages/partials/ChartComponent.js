@@ -130,67 +130,70 @@ function ChartComponent() {
       </div>
       <div className="col-12 mt-4">
         {chartData && (
-          <Line
-            data={chartData}
-            options={{
-              responsive: true,
-              maintainAspectRatio: false,
-              plugins: {
-                title: {
-                  display: true,
-                  text: 'The data presented shows Total Enabled till July 16 2023, then the data changes to Total Masternodes',
-                  position: 'bottom'
-                },
-                tooltip: {
-                  callbacks: {
-                    label: function(context) {
-                      var label = context.dataset.label || '';
-                      if (label) {
-                        label += ': ';
-                      }
-                      if (context.parsed.y !== null) {
-                        label += new Intl.NumberFormat('en-US').format(context.parsed.y);
-                      }
-                      const date = context.dataset.rawDates[context.dataIndex];
-                      const dateLabel = `Date: ${date.toLocaleDateString('en-GB')}`;
-                      return [label, dateLabel];
-                    }
-                  }
-                },
-                legend: {
-                  display: false,
-                },
-              },
-              scales: {
-                y: {
-                  ticks: {
-                    autoSkip: true,
-                    maxTicksLimit: 10,
-                    beginAtZero: true,
-                  },
-                  grid: {
-                    display: true,
-                    drawBorder: false,
-                    color: 'rgba(0, 0, 0, 0.1)',
-                    lineWidth: 1,
-                  },
-                },
-                x: {
-                  ticks: {
-                    maxTicksLimit: 10,
-                  },
-                  grid: {
-                    display: false,
-                  },
-                  adapters: {
-                    date: {
-                      range: null,
-                    },
-                  },
-                },
-              },
-            }}
-          />
+          <div style={{border: "1px solid #ccc", padding: "50px", width: "700px", height: "350px"}}>
+  <Line
+    data={chartData}
+    options={{
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        title: {
+          display: true,
+          text: 'The data presented shows Total Enabled till July 16 2023, then the data changes to Total Masternodes',
+          position: 'bottom'
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              var label = context.dataset.label || '';
+              if (label) {
+                label += ': ';
+              }
+              if (context.parsed.y !== null) {
+                label += new Intl.NumberFormat('en-US').format(context.parsed.y);
+              }
+              const date = context.dataset.rawDates[context.dataIndex];
+              const dateLabel = `Date: ${date.toLocaleDateString('en-GB')}`;
+              return [label, dateLabel];
+            }
+          }
+        },
+        legend: {
+          display: false,
+        },
+      },
+      scales: {
+        y: {
+          ticks: {
+            autoSkip: true,
+            maxTicksLimit: 10,
+            beginAtZero: true,
+          },
+          grid: {
+            display: true,
+            drawBorder: false,
+            color: 'rgba(0, 0, 0, 0.1)',
+            lineWidth: 1,
+          },
+        },
+        x: {
+          ticks: {
+            maxTicksLimit: 10,
+          },
+          grid: {
+            display: false,
+          },
+          adapters: {
+            date: {
+              range: null,
+            },
+          },
+        },
+      },
+    }}
+  />
+</div>
+
         )}
       </div>
     </div>
