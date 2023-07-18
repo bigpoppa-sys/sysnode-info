@@ -86,7 +86,7 @@ function ChartComponent() {
   };
 
   return (
-    <div className="text-center">
+    <div className="text-center" style={{ paddingBottom: "50px" }}>
       <h1 className="text-white display-4 font-weight-bold">Masternode Count</h1>
       <div className="Chart container">
         <div className="row justify-content-center">
