@@ -8,11 +8,11 @@
     "npm": "6.x"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
     "anychart-react": "^1.4.1",
-    "axios": "^0.19.2",
+    "axios": "^1.4.0",
     "bootstrap-sass": "^3.4.1",
     "datamaps": "^0.5.9",
     "express": "^4.17.1",
@@ -21,7 +21,7 @@
     "i18next-browser-languagedetector": "^5.0.1",
     "i18next-http-backend": "^1.0.17",
     "moment": "^2.29.1",
-    "react": "^16.13.1",
+    "react": "^18.2.0",
     "react-bootstrap-table": "^4.3.1",
     "react-bootstrap-table-next": "^4.0.3",
     "react-bootstrap-table2-paginator": "^2.1.2",
@@ -33,13 +33,14 @@
     "react-meta-tags": "^0.7.4",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "react-tooltip": "^4.2.8",
     "papaparse": "^5.4.1",
     "react-chartjs-2": "^5.2.0",
     "chart.js": "^4.3.0",
     "chartjs-plugin-zoom": "^2.0.1",
-    "chartjs-adapter-moment": "^1.0.1"
+    "chartjs-adapter-moment": "^1.0.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
