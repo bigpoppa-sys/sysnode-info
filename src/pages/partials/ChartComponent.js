@@ -87,7 +87,7 @@ function ChartComponent() {
 
   return (
     <div className="text-center">
-      <h1>Masternode Count</h1>
+      <h1 className="text-white display-4 font-weight-bold">Masternode Count</h1>
       <div className="Chart container">
         <div className="row justify-content-center">
           <div className="col-12 mt-4">
@@ -132,7 +132,7 @@ function ChartComponent() {
           </div>
           <div className="col-12 mt-4">
             {chartData && (
-              <div style={{border: "1px solid #ccc", padding: "50px", width: "700px", height: "350px", backgroundColor: "white", margin: "auto"}}>
+              <div style={{border: "1px solid #ccc", padding: "50px", width: "1000px", height: "500px", backgroundColor: "white", margin: "auto"}}>
                 <Line
                   data={chartData}
                   options={{
