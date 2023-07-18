@@ -67,7 +67,7 @@ function ChartComponent() {
               borderWidth: 1,
               pointStyle: 'circle',
               hoverRadius: 10,
-              radius: 0.1,
+              radius: 3,
             },
           ],
         });
@@ -130,74 +130,73 @@ function ChartComponent() {
               </button>
             </div>
           </div>
-          <div className="row">
-            <div className="col-12 col-md-8 col-lg-6 mx-auto mt-4">
-              {chartData && (
-                <div style={{border: "1px solid #ccc", padding: "50px", width: "100%", height: "auto", backgroundColor: "white"}}>
-                  <Line
-                    data={chartData}
-                    options={{
-                      responsive: true,
-                      maintainAspectRatio: false,
-                      plugins: {
-                        title: {
-                          display: true,
-                          text: 'The data presented shows Total Enabled till July 16 2023, then the data changes to Total Masternodes',
-                          position: 'bottom'
-                        },
-                        tooltip: {
-                          callbacks: {
-                            label: function(context) {
-                              var label = context.dataset.label || '';
-                              if (label) {
-                                label += ': ';
-                              }
-                              if (context.parsed.y !== null) {
-                                label += new Intl.NumberFormat('en-US').format(context.parsed.y);
-                              }
-                              const date = context.dataset.rawDates[context.dataIndex];
-                              const dateLabel = `Date: ${date.toLocaleDateString('en-GB')}`;
-                              return [label, dateLabel];
+          <div className="col-12 mt-4">
+            {chartData && (
+              <div style={{border: "1px solid #ccc", padding: "50px", width: "1000px", height: "500px", backgroundColor: "white", margin: "auto"}}>
+                <Line
+                  data={chartData}
+                  options={{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                      title: {
+                        display: true,
+                        text: 'The data presented shows Total Enabled till July 16 2023, then the data changes to Total Masternodes',
+                        position: 'bottom'
+                      },
+                      tooltip: {
+                        intersect: false,
+                        callbacks: {
+                          label: function(context) {
+                            var label = context.dataset.label || '';
+                            if (label) {
+                              label += ': ';
                             }
+                            if (context.parsed.y !== null) {
+                              label += new Intl.NumberFormat('en-US').format(context.parsed.y);
+                            }
+                            const date = context.dataset.rawDates[context.dataIndex];
+                            const dateLabel = `Date: ${date.toLocaleDateString('en-GB')}`;
+                            return [label, dateLabel];
                           }
+                        }
+                      },
+                      legend: {
+                        display: false,
+                      },
+                    },
+                    scales: {
+                      y: {
+                        ticks: {
+                          autoSkip: true,
+                          maxTicksLimit: 10,
+                          beginAtZero: true,
                         },
-                        legend: {
+                        grid: {
+                          display: true,
+                          drawBorder: false,
+                          color: 'rgba(0, 0, 0, 0.1)',
+                          lineWidth: 1,
+                        },
+                      },
+                      x: {
+                        ticks: {
+                          maxTicksLimit: 10,
+                        },
+                        grid: {
                           display: false,
                         },
-                      },
-                      scales: {
-                        y: {
-                          ticks: {
-                            autoSkip: true,
-                            maxTicksLimit: 10,
-                            beginAtZero: true,
-                          },
-                          grid: {
-                            display: true,
-                            drawBorder: false,
-                            color: 'rgba(0, 0, 0, 0.1)',
-                            lineWidth: 1,
-                          },
-                        },
-                        x: {
-                          ticks: {
-                            maxTicksLimit: 10,
-                          },
-                          grid: {
-                            display: false,
-                          },
-                          adapters: {
-                            date: {
-                              range: null,
-                            },
+                        adapters: {
+                          date: {
+                            range: null,
                           },
                         },
                       },
-                    }}
-                  />
-                </div>
-              )}
-            </div>
+                    },
+                  }}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
