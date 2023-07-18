@@ -130,7 +130,7 @@ function ChartComponent() {
       </div>
       <div className="col-12 mt-4">
         {chartData && (
-          <div style={{border: "1px solid #ccc", padding: "50px", width: "700px", height: "350px"}}>
+          <div style={{border: "1px solid #ccc", padding: "50px", width: "1000px", height: "500px", backgroundColor: "white"}}>
   <Line
     data={chartData}
     options={{
