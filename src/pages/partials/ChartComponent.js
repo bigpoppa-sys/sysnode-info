@@ -67,7 +67,7 @@ function ChartComponent() {
               borderWidth: 1,
               pointStyle: 'circle',
               hoverRadius: 10,
-              radius: 3,
+              radius: 0.1,
             },
           ],
         });
