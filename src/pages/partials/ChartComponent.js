@@ -86,46 +86,49 @@ function ChartComponent() {
   };
 
   return (
-    <div className="Chart">
-      <div>
-        <div>
+  <div className="Chart container">
+    <div className="row justify-content-center">
+      <div className="col-12 mt-4">
+        <div className="btn-group" role="group" aria-label="Time range">
           <button
-            className={timeRange === 'all' ? 'active' : ''}
+            className={timeRange === 'all' ? 'btn btn-primary' : 'btn btn-outline-primary'}
             onClick={() => handleTimeRangeClick('all')}
           >
             All
           </button>
           <button
-            className={timeRange === '7days' ? 'active' : ''}
+            className={timeRange === '7days' ? 'btn btn-primary' : 'btn btn-outline-primary'}
             onClick={() => handleTimeRangeClick('7days')}
           >
             Last 7 Days
           </button>
           <button
-            className={timeRange === '1month' ? 'active' : ''}
+            className={timeRange === '1month' ? 'btn btn-primary' : 'btn btn-outline-primary'}
             onClick={() => handleTimeRangeClick('1month')}
           >
             Last Month
           </button>
           <button
-            className={timeRange === '3months' ? 'active' : ''}
+            className={timeRange === '3months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
             onClick={() => handleTimeRangeClick('3months')}
           >
             Last 3 Months
           </button>
           <button
-            className={timeRange === '6months' ? 'active' : ''}
+            className={timeRange === '6months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
             onClick={() => handleTimeRangeClick('6months')}
           >
             Last 6 Months
           </button>
           <button
-            className={timeRange === '12months' ? 'active' : ''}
+            className={timeRange === '12months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
             onClick={() => handleTimeRangeClick('12months')}
           >
             Last Year
           </button>
         </div>
+      </div>
+      <div className="col-12 mt-4">
         {chartData && (
           <Line
             data={chartData}
@@ -191,7 +194,9 @@ function ChartComponent() {
         )}
       </div>
     </div>
-  );
+  </div>
+);
+
 }
 
 export default ChartComponent;
