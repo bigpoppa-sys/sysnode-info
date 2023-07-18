@@ -34,7 +34,7 @@ export default {
       title: 'Rewards',
       question: 'How does Decentralized Governance work?',
       description: {
-        d1: '75% of each regular block reward is distributed to Masternode operators as an incentive to continue running the node. Each payout amounts to roughly 25 SYS, though this will increase over time due to the Seniority Benefits mechanism. The likelihood of a Masternode receiving a payout is inversely proportional to the total number of Masternodes on the network. At the time of writing, a Masternode is likely to receive a 25 SYS reward roughly once every 24 hours.',
+        d1: '75% of each regular block reward is distributed to Masternode operators as an incentive to continue running the node. Each payout amounts to roughly 53 SYS, though this will increase over time due to the Seniority Benefits mechanism. The likelihood of a Masternode receiving a payout is inversely proportional to the total number of Masternodes on the network. At the time of writing, a Masternode is likely to receive a 53 SYS reward roughly once every 4-5 days.',
         d2: 'As a seniority benefit, Masternode operators receive a 35% bonus to their base reward after one year, and a 100% bonus after 2.5 years. This benefit is paid only if the collateral for an active Masternode is kept locked at the same address for the entire qualification period.',
       },
     },

@@ -90,49 +90,49 @@ function ChartComponent() {
       <h1 className="text-white display-4 font-weight-bold">Masternode Count</h1>
       <div className="Chart container">
         <div className="row justify-content-center">
-          <div className="col-12 mt-4">
-          <div className="btn-group d-sm-flex d-md-inline-flex" role="group" aria-label="Time range">
-              <button
-                className={timeRange === 'all' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-                onClick={() => handleTimeRangeClick('all')}
-              >
-                All
-              </button>
-              <button
-                className={timeRange === '7days' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-                onClick={() => handleTimeRangeClick('7days')}
-              >
-                Last 7 Days
-              </button>
-              <button
-                className={timeRange === '1month' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-                onClick={() => handleTimeRangeClick('1month')}
-              >
-                Last Month
-              </button>
-              <button
-                className={timeRange === '3months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-                onClick={() => handleTimeRangeClick('3months')}
-              >
-                Last 3 Months
-              </button>
-              <button
-                className={timeRange === '6months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-                onClick={() => handleTimeRangeClick('6months')}
-              >
-                Last 6 Months
-              </button>
-              <button
-                className={timeRange === '12months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-                onClick={() => handleTimeRangeClick('12months')}
-              >
-                Last Year
-              </button>
-            </div>
+        <div className="col-12 mt-4 justify-content-center flex-wrap">
+          <div className="btn-group flex-wrap d-sm-flex d-md-inline-flex" role="group" aria-label="Time range">
+            <button
+              className={timeRange === 'all' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+              onClick={() => handleTimeRangeClick('all')}
+            >
+              All Time
+            </button>
+            <button
+              className={timeRange === '7days' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+              onClick={() => handleTimeRangeClick('7days')}
+            >
+              Last 7 Days
+            </button>
+            <button
+              className={timeRange === '1month' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+              onClick={() => handleTimeRangeClick('1month')}
+            >
+              Last Month
+            </button>
+            <button
+              className={timeRange === '3months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+              onClick={() => handleTimeRangeClick('3months')}
+            >
+              Last 3 Months
+            </button>
+            <button
+              className={timeRange === '6months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+              onClick={() => handleTimeRangeClick('6months')}
+            >
+              Last 6 Months
+            </button>
+            <button
+              className={timeRange === '12months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+              onClick={() => handleTimeRangeClick('12months')}
+            >
+              Last Year
+            </button>
+          </div>
           </div>
           <div className="col-12 mt-4 mx-auto" style={{ maxWidth: '1000px', height: '500px' }}>
             {chartData && (
-                <div style={{border: "1px solid #ccc", padding: "20px", backgroundColor: "white"}} className="w-100 h-100">
+                <div style={{border: "1px solid #ccc", padding: "10px", backgroundColor: "white"}} className="w-100 h-100">
                 <Line
                   data={chartData}
                   options={{
