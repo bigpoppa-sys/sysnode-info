@@ -8,7 +8,7 @@ Chart.register(LinearScale, Title, Tooltip, Legend);
 
 function ChartComponent() {
   const [chartData, setChartData] = useState(null);
-  const [timeRange, setTimeRange] = useState('all');
+  const [timeRange, setTimeRange] = useState('7days');
   const [hoveredPoint, setHoveredPoint] = useState(null);
 
   const fetchChartData = useCallback(() => {
