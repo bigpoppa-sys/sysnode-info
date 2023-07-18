@@ -1,0 +1,23 @@
+.chart-container {
+  width: 700px;
+  height: 350px;
+  border: 1px solid #ccc;
+  padding: 50px;
+}
+
+.time-range-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.time-range-buttons button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.time-range-buttons button.active {
+  background-color: #2b2fff71;
+}
