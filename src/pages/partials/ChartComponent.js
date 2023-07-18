@@ -91,7 +91,7 @@ function ChartComponent() {
       <div className="Chart container">
         <div className="row justify-content-center">
           <div className="col-12 mt-4">
-            <div className="btn-group" role="group" aria-label="Time range">
+          <div className="btn-group d-sm-flex d-md-inline-flex" role="group" aria-label="Time range">
               <button
                 className={timeRange === 'all' ? 'btn btn-primary' : 'btn btn-outline-primary'}
                 onClick={() => handleTimeRangeClick('all')}
@@ -132,7 +132,7 @@ function ChartComponent() {
           </div>
           <div className="col-12 mt-4 mx-auto" style={{ maxWidth: '1000px', height: '500px' }}>
             {chartData && (
-                <div style={{border: "1px solid #ccc", padding: "50px", backgroundColor: "white"}} className="w-100 h-100">
+                <div style={{border: "1px solid #ccc", padding: "20px", backgroundColor: "white"}} className="w-100 h-100">
                 <Line
                   data={chartData}
                   options={{
@@ -141,8 +141,9 @@ function ChartComponent() {
                     plugins: {
                       title: {
                         display: true,
-                        text: 'The data presented shows Total Enabled till July 16 2023, then the data changes to Total Masternodes',
-                        position: 'bottom'
+                        text: ['The data presented shows Total Enabled till July 16 2023,', 'then the data changes to Total Masternodes'],
+                        position: 'bottom',
+                        fontSize: 14
                       },
                       tooltip: {
                         intersect: false,
