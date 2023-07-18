@@ -4,7 +4,6 @@ import { LinearScale } from 'chart.js';
 import Chart from 'chart.js/auto';
 import axios from 'axios';
 import 'chartjs-plugin-zoom';
-import './styles.css';
 
 Chart.register(LinearScale);
 
@@ -88,8 +87,8 @@ function ChartComponent() {
 
   return (
     <div className="Chart">
-      <div className="chart-container">
-        <div className="time-range-buttons">
+      <div>
+        <div>
           <button
             className={timeRange === 'all' ? 'active' : ''}
             onClick={() => handleTimeRangeClick('all')}
