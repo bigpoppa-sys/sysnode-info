@@ -145,6 +145,7 @@ function ChartComponent() {
                         position: 'bottom'
                       },
                       tooltip: {
+                        intersect: false,
                         callbacks: {
                           label: function(context) {
                             var label = context.dataset.label || '';
