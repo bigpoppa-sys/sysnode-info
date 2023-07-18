@@ -7,6 +7,7 @@ import Income from './partials/Income';
 import Price from './partials/Price';
 import Investment from './partials/Investment';
 import WorldMap from './partials/WorldMap';
+import ChartComponent from './partials/ChartComponent';
 import MetaTags from 'react-meta-tags';
 import { withTranslation } from "react-i18next";
 
@@ -49,6 +50,7 @@ export class Home extends Component {
                         <meta name="description" content={t('home.description')} />
                     </MetaTags>
                     <Banner />
+                    <ChartComponent />
                     <Doughnut chartData={this.state.api_data.stats.mn_stats}/>
                     <Income incomeData={this.state.api_data.stats.income_stats} incomeSenOneYrData={this.state.api_data.stats.income_stats_seniority_one_year} incomeSenTwoYrData={this.state.api_data.stats.income_stats_seniority_two_year}/>
                     <Price priceData={this.state.api_data.stats.price_stats}/>
