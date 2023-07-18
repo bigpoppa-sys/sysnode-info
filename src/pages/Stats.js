@@ -53,7 +53,7 @@ export class Stats extends Component {
                     <Price priceData={this.state.api_data.stats.price_stats}/>
                     <Investment investData={this.state.api_data.stats.mn_stats} blockchainData={this.state.api_data.stats.blockchain_stats}/>
                     <WorldMap mapData={this.state.api_data.mapData} mapFills={this.state.api_data.mapFills}/>
-                    <Chart />
+                    <ChartComponent />
                 </main>
             )
         } else {
