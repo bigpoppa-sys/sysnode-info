@@ -178,8 +178,7 @@ function ChartComponent() {
                         annotations: {
                           line1: {
                             type: 'line',
-                            xMin: hoveredPoint,
-                            xMax: hoveredPoint,
+                            value: chartData.labels[hoveredPoint],
                             borderColor: 'rgb(255, 99, 132)',
                             borderWidth: 2,
                           }
