@@ -130,7 +130,7 @@ function ChartComponent() {
               </button>
             </div>
           </div>
-          <div className="col-12 mt-4 mx-auto" style={{ maxWidth: '1000px', maxHeight: '500px' }}>
+          <div className="col-12 mt-4 mx-auto" style={{ maxWidth: '1000px', height: '500px' }}>
             {chartData && (
                 <div style={{border: "1px solid #ccc", padding: "50px", backgroundColor: "white"}} className="w-100 h-100">
                 <Line
