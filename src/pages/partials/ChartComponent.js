@@ -33,7 +33,7 @@ function ChartComponent() {
     }
 
     axios
-      .get('http://syscoin.dev/mnCount')
+      .get('https://syscoin.dev/mnCount')
       .then(res => {
         console.log(res);
         for (const dataObj of res.data) {
