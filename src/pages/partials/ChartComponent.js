@@ -172,6 +172,7 @@ function ChartComponent() {
                       },
                       tooltip: {
                         intersect: false,
+                        displayColors: false,
                         callbacks: {
                           label: function(context) {
                             var label = context.dataset.label || '';
