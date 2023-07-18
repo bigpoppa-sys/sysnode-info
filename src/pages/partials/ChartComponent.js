@@ -86,120 +86,121 @@ function ChartComponent() {
   };
 
   return (
-  <div className="Chart container">
-    <div className="row justify-content-center">
-      <div className="col-12 mt-4">
-        <div className="btn-group" role="group" aria-label="Time range">
-          <button
-            className={timeRange === 'all' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-            onClick={() => handleTimeRangeClick('all')}
-          >
-            All
-          </button>
-          <button
-            className={timeRange === '7days' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-            onClick={() => handleTimeRangeClick('7days')}
-          >
-            Last 7 Days
-          </button>
-          <button
-            className={timeRange === '1month' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-            onClick={() => handleTimeRangeClick('1month')}
-          >
-            Last Month
-          </button>
-          <button
-            className={timeRange === '3months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-            onClick={() => handleTimeRangeClick('3months')}
-          >
-            Last 3 Months
-          </button>
-          <button
-            className={timeRange === '6months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-            onClick={() => handleTimeRangeClick('6months')}
-          >
-            Last 6 Months
-          </button>
-          <button
-            className={timeRange === '12months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-            onClick={() => handleTimeRangeClick('12months')}
-          >
-            Last Year
-          </button>
+    <div className="text-center">
+      <h1>Masternode Count</h1>
+      <div className="Chart container">
+        <div className="row justify-content-center">
+          <div className="col-12 mt-4">
+            <div className="btn-group" role="group" aria-label="Time range">
+              <button
+                className={timeRange === 'all' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+                onClick={() => handleTimeRangeClick('all')}
+              >
+                All
+              </button>
+              <button
+                className={timeRange === '7days' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+                onClick={() => handleTimeRangeClick('7days')}
+              >
+                Last 7 Days
+              </button>
+              <button
+                className={timeRange === '1month' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+                onClick={() => handleTimeRangeClick('1month')}
+              >
+                Last Month
+              </button>
+              <button
+                className={timeRange === '3months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+                onClick={() => handleTimeRangeClick('3months')}
+              >
+                Last 3 Months
+              </button>
+              <button
+                className={timeRange === '6months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+                onClick={() => handleTimeRangeClick('6months')}
+              >
+                Last 6 Months
+              </button>
+              <button
+                className={timeRange === '12months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
+                onClick={() => handleTimeRangeClick('12months')}
+              >
+                Last Year
+              </button>
+            </div>
+          </div>
+          <div className="col-12 mt-4">
+            {chartData && (
+              <div style={{border: "1px solid #ccc", padding: "50px", width: "700px", height: "350px", backgroundColor: "white", margin: "auto"}}>
+                <Line
+                  data={chartData}
+                  options={{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                      title: {
+                        display: true,
+                        text: 'The data presented shows Total Enabled till July 16 2023, then the data changes to Total Masternodes',
+                        position: 'bottom'
+                      },
+                      tooltip: {
+                        callbacks: {
+                          label: function(context) {
+                            var label = context.dataset.label || '';
+                            if (label) {
+                              label += ': ';
+                            }
+                            if (context.parsed.y !== null) {
+                              label += new Intl.NumberFormat('en-US').format(context.parsed.y);
+                            }
+                            const date = context.dataset.rawDates[context.dataIndex];
+                            const dateLabel = `Date: ${date.toLocaleDateString('en-GB')}`;
+                            return [label, dateLabel];
+                          }
+                        }
+                      },
+                      legend: {
+                        display: false,
+                      },
+                    },
+                    scales: {
+                      y: {
+                        ticks: {
+                          autoSkip: true,
+                          maxTicksLimit: 10,
+                          beginAtZero: true,
+                        },
+                        grid: {
+                          display: true,
+                          drawBorder: false,
+                          color: 'rgba(0, 0, 0, 0.1)',
+                          lineWidth: 1,
+                        },
+                      },
+                      x: {
+                        ticks: {
+                          maxTicksLimit: 10,
+                        },
+                        grid: {
+                          display: false,
+                        },
+                        adapters: {
+                          date: {
+                            range: null,
+                          },
+                        },
+                      },
+                    },
+                  }}
+                />
+              </div>
+            )}
+          </div>
         </div>
       </div>
-      <div className="col-12 mt-4">
-        {chartData && (
-          <div style={{border: "1px solid #ccc", padding: "50px", width: "1000px", height: "500px", backgroundColor: "white"}}>
-  <Line
-    data={chartData}
-    options={{
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        title: {
-          display: true,
-          text: 'The data presented shows Total Enabled till July 16 2023, then the data changes to Total Masternodes',
-          position: 'bottom'
-        },
-        tooltip: {
-          callbacks: {
-            label: function(context) {
-              var label = context.dataset.label || '';
-              if (label) {
-                label += ': ';
-              }
-              if (context.parsed.y !== null) {
-                label += new Intl.NumberFormat('en-US').format(context.parsed.y);
-              }
-              const date = context.dataset.rawDates[context.dataIndex];
-              const dateLabel = `Date: ${date.toLocaleDateString('en-GB')}`;
-              return [label, dateLabel];
-            }
-          }
-        },
-        legend: {
-          display: false,
-        },
-      },
-      scales: {
-        y: {
-          ticks: {
-            autoSkip: true,
-            maxTicksLimit: 10,
-            beginAtZero: true,
-          },
-          grid: {
-            display: true,
-            drawBorder: false,
-            color: 'rgba(0, 0, 0, 0.1)',
-            lineWidth: 1,
-          },
-        },
-        x: {
-          ticks: {
-            maxTicksLimit: 10,
-          },
-          grid: {
-            display: false,
-          },
-          adapters: {
-            date: {
-              range: null,
-            },
-          },
-        },
-      },
-    }}
-  />
-</div>
-
-        )}
-      </div>
     </div>
-  </div>
-);
-
+  );
 }
 
 export default ChartComponent;
