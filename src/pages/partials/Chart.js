@@ -8,7 +8,7 @@ import './styles.css';
 
 Chart.register(LinearScale);
 
-function Chart() {
+function ChartComponent() {
   const [chartData, setChartData] = useState(null);
   const [timeRange, setTimeRange] = useState('all');
 
@@ -195,4 +195,4 @@ function Chart() {
   );
 }
 
-export default Chart;
+export default ChartComponent;
