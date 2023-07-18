@@ -92,48 +92,13 @@ function ChartComponent() {
         <div className="row justify-content-center">
           <div className="col-12 mt-4">
             <div className="btn-group" role="group" aria-label="Time range">
-              <button
-                className={timeRange === 'all' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-                onClick={() => handleTimeRangeClick('all')}
-              >
-                All
-              </button>
-              <button
-                className={timeRange === '7days' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-                onClick={() => handleTimeRangeClick('7days')}
-              >
-                Last 7 Days
-              </button>
-              <button
-                className={timeRange === '1month' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-                onClick={() => handleTimeRangeClick('1month')}
-              >
-                Last Month
-              </button>
-              <button
-                className={timeRange === '3months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-                onClick={() => handleTimeRangeClick('3months')}
-              >
-                Last 3 Months
-              </button>
-              <button
-                className={timeRange === '6months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-                onClick={() => handleTimeRangeClick('6months')}
-              >
-                Last 6 Months
-              </button>
-              <button
-                className={timeRange === '12months' ? 'btn btn-primary' : 'btn btn-outline-primary'}
-                onClick={() => handleTimeRangeClick('12months')}
-              >
-                Last Year
-              </button>
+              {/* time range buttons */}
             </div>
           </div>
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6 mx-auto mt-4">
               {chartData && (
-                <div style={{border: "1px solid #ccc", padding: "50px", width: "100%", height: "auto", backgroundColor: "white"}}>
+                <div style={{border: "1px solid #ccc", padding: "50px", width: "100%", height: "500px", backgroundColor: "white"}}>
                   <Line
                     data={chartData}
                     options={{
@@ -148,16 +113,7 @@ function ChartComponent() {
                         tooltip: {
                           callbacks: {
                             label: function(context) {
-                              var label = context.dataset.label || '';
-                              if (label) {
-                                label += ': ';
-                              }
-                              if (context.parsed.y !== null) {
-                                label += new Intl.NumberFormat('en-US').format(context.parsed.y);
-                              }
-                              const date = context.dataset.rawDates[context.dataIndex];
-                              const dateLabel = `Date: ${date.toLocaleDateString('en-GB')}`;
-                              return [label, dateLabel];
+                              // callback code
                             }
                           }
                         },
