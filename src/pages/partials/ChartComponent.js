@@ -2,10 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Line } from 'react-chartjs-2';
 import { LinearScale, Title, Tooltip, Legend } from 'chart.js';
 import Chart from 'chart.js/auto';
-import AnnotationPlugin from 'chartjs-plugin-annotation';
 import axios from 'axios';
 
-Chart.register(LinearScale, Title, Tooltip, Legend, AnnotationPlugin);
+Chart.register(LinearScale, Title, Tooltip, Legend);
 
 function ChartComponent() {
   const [chartData, setChartData] = useState(null);
@@ -136,8 +135,25 @@ function ChartComponent() {
               <div style={{border: "1px solid #ccc", padding: "15px", backgroundColor: "white"}} className="w-100 h-100">
                 <Line
                   data={chartData}
-                  onHover={(_, chartElement) => {
+                  getElementAtEvent={(chartElement) => {
                     setHoveredPoint(chartElement[0]?.index);
+                  }}
+                  onHover={(_, elements, chart) => {
+                    if (elements && elements.length) {
+                      const { ctx, chartArea } = chart;
+                      const x = elements[0].element.x;
+
+                      // Clear the previously drawn vertical line
+                      ctx.clearRect(chartArea.left, chartArea.top, chartArea.right - chartArea.left, chartArea.bottom - chartArea.top);
+
+                      // Draw the new vertical line
+                      ctx.beginPath();
+                      ctx.moveTo(x, chartArea.top);
+                      ctx.lineTo(x, chartArea.bottom);
+                      ctx.lineWidth = 2;
+                      ctx.strokeStyle = 'rgb(255, 99, 132)';
+                      ctx.stroke();
+                    }
                   }}
                   options={{
                     responsive: true,
@@ -174,45 +190,16 @@ function ChartComponent() {
                       legend: {
                         display: false,
                       },
-                      annotation: {
-                        annotations: {
-                          line1: {
-                            type: 'line',
-                            value: chartData.labels[hoveredPoint],
-                            borderColor: 'rgb(255, 99, 132)',
-                            borderWidth: 2,
-                          }
-                        },
-                      },
                     },
                     scales: {
                       y: {
                         ticks: {
                           autoSkip: true,
                           maxTicksLimit: 10,
-                          beginAtZero: true,
+                          beginAtZero: true
                         },
-                        grid: {
-                          display: true,
-                          drawBorder: false,
-                          color: 'rgba(0, 0, 0, 0.1)',
-                          lineWidth: 1,
-                        },
-                      },
-                      x: {
-                        ticks: {
-                          maxTicksLimit: 10,
-                        },
-                        grid: {
-                          display: false,
-                        },
-                        adapters: {
-                          date: {
-                            range: null,
-                          },
-                        },
-                      },
-                    },
+                      }
+                    }
                   }}
                 />
               </div>
