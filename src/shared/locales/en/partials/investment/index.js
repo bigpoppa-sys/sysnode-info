@@ -5,7 +5,7 @@ export default {
       label: 'Label',
       value: 'Value',
       coinsRequired: 'Coins Required',
-      masterNodePrice: 'Masternode Price',
+      masterNodePrice: 'Sentry Node Price',
       roi: 'ROI',
       payoutFrequency: 'Approx. Payout Frequency',
       roiOne: 'ROI: 1 Year Seniority',

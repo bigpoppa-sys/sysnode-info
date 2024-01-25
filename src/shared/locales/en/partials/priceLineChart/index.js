@@ -1,5 +1,5 @@
 export default {
   priceLineChart: {
-    title: 'Masternode',
+    title: 'Sentry Node',
   },
 }

@@ -87,7 +87,7 @@ function ChartComponent() {
 
   return (
     <div className="text-center" style={{ paddingBottom: "50px" }}>
-      <h1 className="text-white display-4 font-weight-bold">Masternode Count</h1>
+      <h1 className="text-white display-4 font-weight-bold">Sentry Node Count</h1>
       <div className="Chart container">
         <div className="row justify-content-center">
           <div className="col-12 mt-4 justify-content-center flex-wrap">
@@ -166,7 +166,7 @@ function ChartComponent() {
                     plugins: {
                       title: {
                         display: true,
-                        text: ['The data presented shows Total Enabled till July 16 2023,', 'then the data changes to Total Masternodes'],
+                        text: ['The data presented shows Total Enabled till July 16 2023,', 'then the data changes to Total Sentry Nodes'],
                         position: 'bottom',
                         fontSize: 14
                       },

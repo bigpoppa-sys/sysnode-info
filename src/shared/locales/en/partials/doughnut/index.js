@@ -2,7 +2,7 @@ export default {
   doughnut: {
     charts: {
       masterNodes: {
-        title: 'Total Masternodes',
+        title: 'Total Sentry Nodes',
         enabled: 'Enabled',
         poseBanned: 'Pose Banned',
       },

@@ -43,9 +43,9 @@ export class Stats extends Component {
             return(
                 <main className="statsPage">
                     <MetaTags>
-                        <title>Syscoin Masternodes - Masternode Stats</title>
-                        <meta name="keywords" content="Syscoin, Masternodes, Blockchain, Crypto, Blockmarket, Coins, Bitcoin, Cryptocurrency, Rewards" />
-                        <meta name="description" content="Sysnode.info provides Syscoin Masternode Operators the tools to maximise the most from their Masternodes!" />
+                        <title>Syscoin Sentry Nodes - Sentry Node Stats</title>
+                        <meta name="keywords" content="Syscoin, Sentry Node, Blockchain, Crypto, Blockmarket, Coins, Bitcoin, Cryptocurrency, Rewards" />
+                        <meta name="description" content="Sysnode.info provides Syscoin Sentry Node Operators the tools to maximise the most from their Sentry Nodes!" />
                     </MetaTags>
                     <InnerBanner heading="Stats"/>
                     <ChartComponent />
@@ -60,9 +60,9 @@ export class Stats extends Component {
             return(
                 <main className="statsPage">
                     <MetaTags>
-                        <title>Syscoin Masternodes - Masternode Stats</title>
-                        <meta name="keywords" content="Syscoin, Masternodes, Blockchain, Crypto, Blockmarket, Coins, Bitcoin, Cryptocurrency, Rewards" />
-                        <meta name="description" content="Sysnode.info provides Syscoin Masternode Operators the tools to maximise the most from their Masternodes!" />
+                        <title>Syscoin Sentry Nodes - Sentry Node Stats</title>
+                        <meta name="keywords" content="Syscoin, Sentry Nodes, Blockchain, Crypto, Blockmarket, Coins, Bitcoin, Cryptocurrency, Rewards" />
+                        <meta name="description" content="Sysnode.info provides Syscoin Sentry Node Operators the tools to maximise the most from their Sentry Nodes!" />
                     </MetaTags>
                     <InnerBanner heading="Stats"/>
                 </main>

@@ -1,11 +1,11 @@
 export default {
   check: {
-    title: 'Masternode Check',
+    title: 'Sentry Node Check',
     loading: 'Loading...',
     meta: {
-      title: 'Syscoin Masternodes - Masternode Checkch',
-      keywords: 'Syscoin, Masternodes, Blockchain, Crypto, Blockmarket, Coins, Bitcoin, Cryptocurrency, Rewards',
-      description: 'Sysnode.info provides Syscoin Masternode Operators the tools to maximise the most from their Masternodes!',
+      title: 'Syscoin Sentry Nodes - Sentry Node Check',
+      keywords: 'Syscoin, Sentry Nodes, Blockchain, Crypto, Blockmarket, Coins, Bitcoin, Cryptocurrency, Rewards',
+      description: 'Sysnode.info provides Syscoin Sentry Node Operators the tools to maximise the most from their Sentry Nodes!',
     },
     table: {
       address: 'Address',
