@@ -51,11 +51,11 @@ export class GovList extends Component {
                     <tbody className="table-body">
                       {Object.entries(this.props.govData).map(([hashKey, proposal]) => (
                         <GovListRow
-                          key={hashKey}
-                          govRowData={proposal}
-                          hashKey={hashKey}
-                          enableVal={this.state.statsData.enabled}
-                        />
+                        key={proposal.Key}
+                        govRowData={proposal}
+                        hashKey={proposal.Key}
+                        enableVal={this.state.statsData.enabled}
+                      />
                       ))}
                     </tbody>
                   </table>
