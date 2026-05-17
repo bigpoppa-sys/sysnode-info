@@ -3,7 +3,12 @@ import { useEffect } from 'react';
 const SITE_NAME = 'Sysnode';
 const DEFAULT_TITLE = 'Sysnode | Syscoin Sentry Node Dashboard';
 const DEFAULT_DESCRIPTION =
-  'Track Syscoin Sentry Node count, locked supply, rewards, governance proposals, setup guidance, and market context in one clean dashboard.';
+  'Live Syscoin Sentry Node stats, governance proposals, rewards, setup guidance, and market data.';
+const SITE_URL = 'https://sysnode.info';
+const SOCIAL_IMAGE_URL = `${SITE_URL}/social-card.png?v=20260518`;
+const SOCIAL_IMAGE_ALT =
+  'Sysnode share image showing the Syscoin Sentry Node dashboard brand and network illustration.';
+const TWITTER_HANDLE = '@syscoin';
 
 function ensureMeta(selector, attributeName, attributeValue) {
   let element = document.head.querySelector(selector);
@@ -11,6 +16,18 @@ function ensureMeta(selector, attributeName, attributeValue) {
   if (!element) {
     element = document.createElement('meta');
     element.setAttribute(attributeName, attributeValue);
+    document.head.appendChild(element);
+  }
+
+  return element;
+}
+
+function ensureLink(selector, relValue) {
+  let element = document.head.querySelector(selector);
+
+  if (!element) {
+    element = document.createElement('link');
+    element.setAttribute('rel', relValue);
     document.head.appendChild(element);
   }
 
@@ -50,10 +67,48 @@ export default function PageMeta(props) {
         'content',
         window.location.href
       );
+      ensureMeta('meta[property="og:image"]', 'property', 'og:image').setAttribute(
+        'content',
+        SOCIAL_IMAGE_URL
+      );
+      ensureMeta(
+        'meta[property="og:image:secure_url"]',
+        'property',
+        'og:image:secure_url'
+      ).setAttribute('content', SOCIAL_IMAGE_URL);
+      ensureMeta(
+        'meta[property="og:image:type"]',
+        'property',
+        'og:image:type'
+      ).setAttribute('content', 'image/png');
+      ensureMeta(
+        'meta[property="og:image:width"]',
+        'property',
+        'og:image:width'
+      ).setAttribute('content', '1200');
+      ensureMeta(
+        'meta[property="og:image:height"]',
+        'property',
+        'og:image:height'
+      ).setAttribute('content', '630');
+      ensureMeta(
+        'meta[property="og:image:alt"]',
+        'property',
+        'og:image:alt'
+      ).setAttribute('content', SOCIAL_IMAGE_ALT);
       ensureMeta('meta[name="twitter:card"]', 'name', 'twitter:card').setAttribute(
         'content',
-        'summary'
+        'summary_large_image'
       );
+      ensureMeta('meta[name="twitter:site"]', 'name', 'twitter:site').setAttribute(
+        'content',
+        TWITTER_HANDLE
+      );
+      ensureMeta(
+        'meta[name="twitter:creator"]',
+        'name',
+        'twitter:creator'
+      ).setAttribute('content', TWITTER_HANDLE);
       ensureMeta('meta[name="twitter:title"]', 'name', 'twitter:title').setAttribute(
         'content',
         fullTitle
@@ -63,6 +118,19 @@ export default function PageMeta(props) {
         'name',
         'twitter:description'
       ).setAttribute('content', description);
+      ensureMeta('meta[name="twitter:image"]', 'name', 'twitter:image').setAttribute(
+        'content',
+        SOCIAL_IMAGE_URL
+      );
+      ensureMeta(
+        'meta[name="twitter:image:alt"]',
+        'name',
+        'twitter:image:alt'
+      ).setAttribute('content', SOCIAL_IMAGE_ALT);
+      ensureLink('link[rel="canonical"]', 'canonical').setAttribute(
+        'href',
+        window.location.href
+      );
     },
     [description, fullTitle]
   );

@@ -1,0 +1,101 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="96" y1="54" x2="1094" y2="592" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5FAFF"/>
+      <stop offset="1" stop-color="#E7F0FF"/>
+    </linearGradient>
+    <radialGradient id="glowLeft" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 182) rotate(31.4) scale(391 295)">
+      <stop stop-color="#6CB5FF" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#6CB5FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowRight" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(916 266) rotate(109.3) scale(315 365)">
+      <stop stop-color="#9CEBDD" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#9CEBDD" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panelFill" x1="722" y1="111" x2="1082" y2="432" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9FCFF"/>
+      <stop offset="1" stop-color="#EEF5FF"/>
+    </linearGradient>
+    <linearGradient id="nodeBlue" x1="798" y1="167" x2="1041" y2="411" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E78FF"/>
+      <stop offset="1" stop-color="#58C7FF"/>
+    </linearGradient>
+    <linearGradient id="nodeGreen" x1="834" y1="257" x2="972" y2="334" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#14B8A6"/>
+      <stop offset="1" stop-color="#B6F2EA"/>
+    </linearGradient>
+    <linearGradient id="badgeBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#1E78FF"/>
+      <stop offset="1" stop-color="#58C7FF"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1200" height="630" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#7DAAE8" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" rx="36" fill="#EAF2FF"/>
+  <rect x="30" y="30" width="1140" height="570" rx="34" fill="url(#bg)"/>
+  <rect x="30" y="30" width="1140" height="570" rx="34" fill="url(#glowLeft)"/>
+  <rect x="30" y="30" width="1140" height="570" rx="34" fill="url(#glowRight)"/>
+
+  <g opacity="0.35">
+    <path d="M125 77H508" stroke="#BFD1EE"/>
+    <path d="M694 77H1077" stroke="#BFD1EE"/>
+    <path d="M1118 116V514" stroke="#D5E2F7"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="86" y="80" width="112" height="112" rx="28" fill="url(#badgeBlue)"/>
+    <path d="M119 136.7C133.4 117.4 165.7 116.6 178.6 130.2C183.8 135.7 185.4 142 184.6 149.4C182.8 166.2 165.2 178 147.2 176.7C134.8 175.9 124.6 171 116.3 163.1L127.8 153.8C133.4 159.4 139.8 162.9 147.8 163.6C156.7 164.3 165.2 160 168 152.3C170.9 144.4 166.9 137.2 158.2 135.2C150.4 133.4 142.7 134.3 135.1 136.7C129.9 138.4 125 141.4 120.6 145.4L119 136.7Z" fill="white"/>
+    <path d="M164.9 136.2C159.7 130.6 153.3 127.1 145.3 126.4C136.4 125.7 127.9 130 125.1 137.7C122.2 145.6 126.2 152.8 134.9 154.8C142.7 156.6 150.4 155.7 158 153.3C163.2 151.6 168.1 148.6 172.5 144.6L174.1 153.3C159.7 172.6 127.4 173.4 114.5 159.8C109.3 154.3 107.7 148 108.5 140.6C110.3 123.8 127.9 112 145.9 113.3C158.3 114.1 168.5 119 176.8 126.9L164.9 136.2Z" fill="white" fill-opacity="0.94"/>
+  </g>
+
+  <text x="230" y="124" fill="#2A63F6" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" letter-spacing="4.8">SENTRY NODE DASHBOARD</text>
+  <text x="86" y="278" fill="#1C2B50" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="700">Sysnode</text>
+  <text x="86" y="336" fill="#425372" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="600">Syscoin Sentry Node Dashboard</text>
+  <text x="86" y="392" fill="#556784" font-family="Arial, Helvetica, sans-serif" font-size="30">Track live network stats, rewards,</text>
+  <text x="86" y="432" fill="#556784" font-family="Arial, Helvetica, sans-serif" font-size="30">governance, setup guidance,</text>
+  <text x="86" y="472" fill="#556784" font-family="Arial, Helvetica, sans-serif" font-size="30">and market context in one place.</text>
+
+  <g>
+    <rect x="86" y="502" width="178" height="58" rx="18" fill="#FFFFFF" fill-opacity="0.9" stroke="#C8D8F0"/>
+    <text x="110" y="538" fill="#2A63F6" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Network</text>
+    <rect x="280" y="502" width="214" height="58" rx="18" fill="#FFFFFF" fill-opacity="0.9" stroke="#C8D8F0"/>
+    <text x="304" y="538" fill="#2A63F6" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Governance</text>
+    <rect x="510" y="502" width="160" height="58" rx="18" fill="#FFFFFF" fill-opacity="0.9" stroke="#C8D8F0"/>
+    <text x="534" y="538" fill="#2A63F6" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Rewards</text>
+  </g>
+
+  <g>
+    <rect x="694" y="112" width="420" height="356" rx="30" fill="url(#panelFill)" stroke="#C8D8F0" stroke-width="2"/>
+    <path d="M818 198C876 222 907 251 949 282" stroke="#B8D1FF" stroke-width="4" stroke-dasharray="8 10" stroke-linecap="round"/>
+    <path d="M1028 184C980 208 946 236 907 276" stroke="#B8D1FF" stroke-width="4" stroke-dasharray="8 10" stroke-linecap="round"/>
+    <path d="M794 351C854 336 899 318 938 291" stroke="#B8D1FF" stroke-width="4" stroke-dasharray="8 10" stroke-linecap="round"/>
+    <path d="M1040 364C988 337 946 313 908 294" stroke="#B8D1FF" stroke-width="4" stroke-dasharray="8 10" stroke-linecap="round"/>
+
+    <circle cx="907" cy="282" r="100" fill="#FFFFFF" stroke="#D3E2FA" stroke-width="2"/>
+    <ellipse cx="907" cy="282" rx="116" ry="47" stroke="#C3D7FA" stroke-width="2"/>
+    <ellipse cx="907" cy="282" rx="61" ry="102" stroke="#C3D7FA" stroke-width="2"/>
+    <path d="M826 236C871 211 937 210 987 242C1020 264 1024 306 990 330C938 365 864 365 821 328C789 301 791 257 826 236Z" stroke="#C3D7FA" stroke-width="2"/>
+
+    <path d="M860 249C874 237 896 235 912 242C923 246 932 257 926 266C915 282 879 282 861 271C853 265 853 257 860 249Z" fill="#DCE7FF"/>
+    <path d="M896 299C910 290 934 289 949 297C960 303 960 316 947 323C934 332 908 332 895 323C886 317 886 304 896 299Z" fill="url(#nodeGreen)"/>
+    <path d="M845 307C854 300 868 300 877 305C884 310 884 319 874 324C863 329 850 327 843 320C838 316 838 310 845 307Z" fill="#DCE7FF"/>
+
+    <circle cx="812" cy="195" r="14" fill="#FFFFFF" stroke="url(#nodeBlue)" stroke-width="7"/>
+    <circle cx="1030" cy="186" r="14" fill="#FFFFFF" stroke="url(#nodeBlue)" stroke-width="7"/>
+    <circle cx="788" cy="352" r="13" fill="#FFFFFF" stroke="url(#nodeGreen)" stroke-width="7"/>
+    <circle cx="1038" cy="366" r="14" fill="#FFFFFF" stroke="url(#nodeBlue)" stroke-width="7"/>
+
+    <rect x="868" y="98" width="222" height="84" rx="24" fill="#FFFFFF" fill-opacity="0.96" stroke="#E0EAFB"/>
+    <text x="889" y="130" fill="#64748D" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="2.4">SECURITY</text>
+    <text x="889" y="157" fill="#1C2B50" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700">Finality and resilience</text>
+
+    <rect x="732" y="366" width="232" height="96" rx="24" fill="#FFFFFF" fill-opacity="0.96" stroke="#E0EAFB"/>
+    <text x="754" y="398" fill="#64748D" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="2.4">PEER-TO-PEER</text>
+    <text x="754" y="425" fill="#1C2B50" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700">Connected global</text>
+    <text x="754" y="450" fill="#1C2B50" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700">operators</text>
+  </g>
+
+  <text x="698" y="542" fill="#2A63F6" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="4">SYSNODE.INFO</text>
+</svg>
