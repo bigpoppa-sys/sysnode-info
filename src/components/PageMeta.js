@@ -5,9 +5,9 @@ const DEFAULT_TITLE = 'Sysnode | Syscoin Sentry Node Dashboard';
 const DEFAULT_DESCRIPTION =
   'Live Syscoin Sentry Node stats, governance proposals, rewards, setup guidance, and market data.';
 const SITE_URL = 'https://sysnode.info';
-const SOCIAL_IMAGE_URL = `${SITE_URL}/social-card.png?v=20260518`;
+const SOCIAL_IMAGE_URL = `${SITE_URL}/social-card.png?v=20260518b`;
 const SOCIAL_IMAGE_ALT =
-  'Sysnode share image showing the Syscoin Sentry Node dashboard brand and network illustration.';
+  'Sysnode social share card with the Syscoin logo, Sysnode wordmark, and a connected globe network illustration.';
 const TWITTER_HANDLE = '@syscoin';
 
 function ensureMeta(selector, attributeName, attributeValue) {
