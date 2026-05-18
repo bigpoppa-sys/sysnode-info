@@ -17,6 +17,11 @@ afterEach(() => {
 });
 
 test('updates og:url when only the location changes', async () => {
+  const staticOgUrl = document.createElement('meta');
+  staticOgUrl.setAttribute('property', 'og:url');
+  staticOgUrl.setAttribute('content', 'https://sysnode.info/');
+  document.head.appendChild(staticOgUrl);
+
   const history = createMemoryHistory({
     initialEntries: ['/verify-email?token=alpha'],
   });
