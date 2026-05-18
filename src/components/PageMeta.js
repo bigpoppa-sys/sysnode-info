@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const SITE_NAME = 'Sysnode';
 const DEFAULT_TITLE = 'Sysnode | Syscoin Sentry Node Dashboard';
@@ -22,21 +23,11 @@ function ensureMeta(selector, attributeName, attributeValue) {
   return element;
 }
 
-function ensureLink(selector, relValue) {
-  let element = document.head.querySelector(selector);
-
-  if (!element) {
-    element = document.createElement('link');
-    element.setAttribute('rel', relValue);
-    document.head.appendChild(element);
-  }
-
-  return element;
-}
-
 export default function PageMeta(props) {
+  const location = useLocation();
   const description = props.description || DEFAULT_DESCRIPTION;
   const fullTitle = props.title ? `${props.title} | ${SITE_NAME}` : DEFAULT_TITLE;
+  const pageUrl = `${window.location.origin}${location.pathname}${location.search}${location.hash}`;
 
   useEffect(
     function syncDocumentMeta() {
@@ -65,7 +56,7 @@ export default function PageMeta(props) {
       );
       ensureMeta('meta[property="og:url"]', 'property', 'og:url').setAttribute(
         'content',
-        window.location.href
+        pageUrl
       );
       ensureMeta('meta[property="og:image"]', 'property', 'og:image').setAttribute(
         'content',
@@ -127,12 +118,8 @@ export default function PageMeta(props) {
         'name',
         'twitter:image:alt'
       ).setAttribute('content', SOCIAL_IMAGE_ALT);
-      ensureLink('link[rel="canonical"]', 'canonical').setAttribute(
-        'href',
-        window.location.href
-      );
     },
-    [description, fullTitle]
+    [description, fullTitle, pageUrl]
   );
 
   return null;
